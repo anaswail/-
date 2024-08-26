@@ -48,7 +48,7 @@ citiesContainer.addEventListener("change", () => {
   } else if (citiesContainer.value == "مطروح") {
     country = "Maţrūḩ";
   }
-  fetch("http://api.aladhan.com/v1/timingsByCity?city=EG&country=" + country)
+  fetch("https://api.aladhan.com/v1/timingsByCity?city=EG&country=" + country)
     .then((response) => response.json())
     .then((value) => {
       let fajer = document.querySelector(".fajer .time h2");
@@ -69,7 +69,7 @@ citiesContainer.addEventListener("change", () => {
     });
 });
 
-fetch("http://api.aladhan.com/v1/timingsByCity?city=EG&country=" + country)
+fetch("https://api.aladhan.com/v1/timingsByCity?city=EG&country=" + country)
   .then((response) => response.json())
   .then((value) => {
     let fajer = document.querySelector(".fajer .time h2");
