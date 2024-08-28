@@ -31,7 +31,7 @@ citiesContainer.addEventListener("change", () => {
   if (citiesContainer.value == "القاهرة") {
     country = "Al Qāhirah";
   } else if (citiesContainer.value == "الجيزة") {
-    country = "Jīzah";
+    country = "Al Jīzah";
   } else if (citiesContainer.value == "الأسكندرية") {
     country = "Al Iskandarīyah";
   } else if (citiesContainer.value == "المنوفيه") {
