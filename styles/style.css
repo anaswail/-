@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.loading{
+    transition: 1s;
+    /* display: block; */
+    opacity: 100%;
+    z-index: 10;
+}
+.loading.done{
+    opacity: 0;
+    /* display: none; */
+    z-index: -1;
+}

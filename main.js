@@ -26,7 +26,8 @@ for (let i = 0; i < cities.length; i++) {
 }
 
 citiesContainer.addEventListener("change", () => {
-    console.log(citiesContainer.value)
+  document.querySelector(".loading").classList.remove("done");
+  console.log(citiesContainer.value);
   if (citiesContainer.value == "القاهرة") {
     country = "Al Qāhirah";
   } else if (citiesContainer.value == "الجيزة") {
@@ -66,6 +67,8 @@ citiesContainer.addEventListener("change", () => {
       asr.innerHTML = timeApi.Asr;
       maghrib.innerHTML = timeApi.Maghrib;
       aesha.innerHTML = timeApi.Isha;
+
+      document.querySelector(".loading").classList.add("done");
     });
 });
 
@@ -88,11 +91,13 @@ fetch("https://api.aladhan.com/v1/timingsByCity?city=EG&country=" + country)
     maghrib.innerHTML = timeApi.Maghrib;
     aesha.innerHTML = timeApi.Isha;
 
-    // date 
-    let title = document.querySelector('.header .title h2');
+    // date
+    let title = document.querySelector(".header .title h2");
     let day = value.data.date.hijri.weekday.ar;
     let fullDate = value.data.date.readable;
     title.innerHTML = day + " " + fullDate;
-  });
 
+    // loading
+    document.querySelector(".loading").classList.add("done");
+  });
 // Sunrise Dhuhr Asr Maghrib Isha
